@@ -55,7 +55,6 @@ function Menu() {
     ));
   }
   const handleChange = (newValue) => {
-    // const selectedCategoryName = uniqueCategories[newValue].categoryName;
     setValue(newValue);
   };
   return (

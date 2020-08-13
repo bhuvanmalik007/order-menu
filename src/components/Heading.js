@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 function Heading() {
   return (
     <Wrapper>
-      <h1 className="cursive" style={{ fontSize: 48 }}>Active Culture</h1>
+      <h1 className="cursive" style={{ fontSize: 48 }}>Active Culture - Menu</h1>
     </Wrapper>
   );
 }
