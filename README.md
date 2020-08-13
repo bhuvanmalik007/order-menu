@@ -6,7 +6,7 @@
  - **React Hooks** for state management without classes and managing component lifecycle.
  - Prettier + ESLint + Airbnb Style Guide for code formatting and maintainable code style.
  - ECMAScript Modules for separating different concerns of the application.
- - Flexbox for styling.
+ - Flexbox, CSS Grids, and Styled-Components for styling.
  - yarn for dev dependencies.
  - CSS in JS.
  - Continuous Deployment on Netlify from Git repository.
