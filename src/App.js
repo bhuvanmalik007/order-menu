@@ -4,11 +4,10 @@ import {
   createMuiTheme,
   ThemeProvider,
 } from "@material-ui/core/styles";
-import Header from "./components/Header";
 import { CssBaseline } from "@material-ui/core";
+import Header from "./components/Header";
 
-
-const useStyles = makeStyles((_theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     display: "flex",
     flexDirection: "column",
@@ -61,7 +60,11 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <div className={classes.root}>
-        <Header darkMode={darkMode} setDarkMode={setDarkMode} title="Order Menu" />
+        <Header
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+          title="Order Menu"
+        />
       </div>
     </ThemeProvider>
   );

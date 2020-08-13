@@ -54,4 +54,5 @@ export default function Header({ darkMode, setDarkMode, title }) {
 Header.propTypes = {
   darkMode: PropTypes.bool.isRequired,
   setDarkMode: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
 };
