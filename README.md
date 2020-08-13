@@ -11,7 +11,7 @@
  - yarn for dev dependencies.
  - CSS in JS.
  - Continuous Deployment on Netlify from Git repository.
- - Implemented Light/Dark Mode. Uses OS color scheme settings as default.
+ - **Implemented Light/Dark Mode. Uses OS color scheme settings as default.**
 
 ## List of commands to run locally
 
