@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useQuery } from 'react-query';
-import LoadingIcon from '../icons/ZWdx.gif';
+import LoadingIcon from '../icons/loader.webp';
 import { API_ENDPOINT, REQUEST_OBJ, CORS_ENABLER_URL } from '../constants';
 import Tabs from './Tabs';
 import Tab from './Tab';
@@ -49,8 +49,8 @@ function Menu() {
   const { isLoading, error, data } = useQuery('menuData', fetcher);
   const [ value, setValue ] = useState(0);
   let uniqueCategories;
-  if (data && data.desc) {
-    uniqueCategories = data.desc.filter((item, index, self) => (
+  if (data && data.data[0] && data.data[0].desc) {
+    uniqueCategories = data.data[0].desc.filter((item, index, self) => (
       self.findIndex((v) => v.categoryName === item.categoryName) === index
     ));
   }
@@ -83,7 +83,7 @@ function Menu() {
       <Grid>
         {!isLoading
         && !error
-        && data.desc
+        && data.data[0].desc
           .filter(
             (item) => item.categoryName === uniqueCategories[value].categoryName
           )

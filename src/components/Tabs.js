@@ -6,10 +6,12 @@ const Wrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   @media (max-width: 400px) {
     flex-direction: column;
   }
 `;
+
 function Tabs({ children }) {
   const [ activeTab, setActiveTab ] = useState(0);
   return (
