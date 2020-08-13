@@ -50,9 +50,9 @@ function Menu() {
   const [ value, setValue ] = useState(0);
   let uniqueCategories;
   if (data && data.data[0] && data.data[0].desc) {
-    uniqueCategories = data.data[0].desc.filter((item, index, self) => (
-      self.findIndex((v) => v.categoryName === item.categoryName) === index
-    ));
+    uniqueCategories = data.data[0].desc.filter(
+      (item, index, self) => self.findIndex((v) => v.categoryName === item.categoryName) === index
+    );
   }
   const handleChange = (newValue) => {
     setValue(newValue);
@@ -65,34 +65,42 @@ function Menu() {
         </Loader>
       )}
       {!isLoading && !error && (
-      <Tabs>
-        {uniqueCategories && uniqueCategories.map((item, index) => ({ ...rest }) => (
-          <Tab
-            {...rest}
-            onClick={() => {
-              handleChange(index);
-              rest.onClick();
-            }}
-            text={item.categoryName}
-          />
-        ))}
-      </Tabs>
+        <Tabs>
+          {uniqueCategories
+            && uniqueCategories.map((item, index) => ({ ...rest }) => (
+              <Tab
+                {...rest}
+                onClick={() => {
+                  handleChange(index);
+                  rest.onClick();
+                }}
+                text={item.categoryName}
+              />
+            ))}
+        </Tabs>
       )}
-      <CategoryDescription className="roboto">{uniqueCategories && uniqueCategories[value].categoryDescription}</CategoryDescription>
+      <CategoryDescription className="roboto">
+        {uniqueCategories && uniqueCategories[value].categoryDescription}
+      </CategoryDescription>
       <Grid>
         {!isLoading
-        && !error
-        && data.data[0].desc
-          .filter(
-            (item) => item.categoryName === uniqueCategories[value].categoryName
-          )
-          .map((item) => (
-            <div key={item.itemNum}>
-              <MenuItem className="cursive">{item.name}</MenuItem>
-              <p className="roboto">{item.description}</p>
-              <p className="roboto">{`$${item.itemPrice}`}</p>
-            </div>
-          ))}
+          && !error
+          && data.data[0].desc
+            .filter(
+              (item) => item.categoryName === uniqueCategories[value].categoryName
+            )
+            .map((item) => (
+              <div key={item.itemNum}>
+                <MenuItem className="cursive">{item.name}</MenuItem>
+                <p className="roboto">{item.description}</p>
+                <p className="roboto">{`$${
+                  `${item.itemPrice.substring(0, item.itemPrice.length - 2)
+                  }.${
+                    item.itemPrice.substring(item.itemPrice.length - 2)}`
+                }`}
+                </p>
+              </div>
+            ))}
       </Grid>
     </div>
   );
