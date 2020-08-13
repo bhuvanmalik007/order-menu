@@ -5,12 +5,12 @@
  - **React** as view library. (Latest version)
  - **React Hooks** for state management without classes and managing component lifecycle.
  - Prettier + ESLint + Airbnb Style Guide for code formatting and maintainable code style.
- - Typechecking With PropTypes.
  - ECMAScript Modules for separating different concerns of the application.
  - Flexbox for styling.
  - yarn for dev dependencies.
  - CSS in JS.
  - Continuous Deployment on Netlify from Git repository.
+ - Implemented Light/Dark Mode. Uses OS color scheme settings as default.
 
 ## List of commands to run locally
 
