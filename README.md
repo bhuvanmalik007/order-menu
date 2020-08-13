@@ -5,8 +5,9 @@
  - **React** as view library. (Latest version)
  - **React Hooks** for state management without classes and managing component lifecycle.
  - Prettier + ESLint + Airbnb Style Guide for code formatting and maintainable code style.
+ - Created custom tab system for Menu categories.
  - ECMAScript Modules for separating different concerns of the application.
- - Flexbox, CSS Grids, and Styled-Components for styling.
+ - Flexbox, CSS Grids, and Styled-Components for styling 💅.
  - yarn for dev dependencies.
  - CSS in JS.
  - Continuous Deployment on Netlify from Git repository.
