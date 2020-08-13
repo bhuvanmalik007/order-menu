@@ -1,22 +1,57 @@
 {
-  "extends": [
-    "react-app",
-    "airbnb",
-    "plugin:jsx-a11y/recommended",
-    "prettier",
-    "prettier/react"
-  ],
-  "plugins": [
-    "jsx-a11y",
-    "prettier"
-  ],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": ["airbnb", "airbnb/hooks"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
   "rules": {
-    // "semi": 0,
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "prettier/prettier": [
-      "error", {
-        // "semi": false
+    "array-bracket-spacing": ["error", "always"],
+    "comma-dangle": ["error", "never"],
+    "import/exports-last": "error",
+    "import/first": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          ["external", "builtin"],
+          ["index", "internal", "sibling", "parent"]
+        ]
       }
-    ]
+    ],
+    "jsx-a11y/label-has-for": ["off"],
+    "no-class-assign": ["off"],
+    "no-func-assign": ["off"],
+    "no-multiple-empty-lines": [
+      "error",
+      { "max": 1, "maxBOF": 0, "maxEOF": 0 }
+    ],
+    "no-param-reassign": ["error", { "props": false }],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "no-unused-vars": [
+      "error",
+      { "ignoreRestSiblings": true, "argsIgnorePattern": "^_" }
+    ],
+    "object-curly-newline": ["error", { "consistent": true }],
+    "react/button-has-type": ["off"],
+    "react/forbid-prop-types": ["off"],
+    "react/jsx-filename-extension": ["error", { "extensions": [".js"] }],
+    "react/jsx-one-expression-per-line": 0,
+    "react/jsx-props-no-spreading": ["off"],
+    "react/no-unused-prop-types": ["off"],
+    "react/prop-types": ["off"],
+    "react/react-in-jsx-scope": "off",
+    "semi": ["error", "always"]
   }
 }
